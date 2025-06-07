@@ -23,14 +23,14 @@ class MyApp extends StatelessWidget {
         dark: ThemeData.dark(useMaterial3: true),
         initial: adaptiveThemeMode ?? AdaptiveThemeMode.light,
         builder: (theme, darkTheme) => MaterialApp(
-              darkTheme: darkTheme,
-              theme: theme,
-              initialRoute: SplashPage.path,
-              routes: {
-                SplashPage.path: (context) => const SplashPage(),
-                HomePage.path: (context) => const HomePage(),
-                SettingsPage.path: (context) => const SettingsPage(),
-              },
-            ));
+          darkTheme: darkTheme,
+          theme: theme,
+          initialRoute: SplashPage.path,
+          routes: {
+            SplashPage.path: (context) => const SplashPage(),
+            HomePage.path: (context) => const HomePage(),
+            SettingsPage.path: (context) => const SettingsPage(),
+          },
+        ));
   }
 }

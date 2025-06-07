@@ -70,61 +70,61 @@ class _SettingsPageState extends State<SettingsPage> {
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
           : SettingsList(
-              sections: [
-                SettingsSection(
-                  title: const Text('Appearance'),
-                  tiles: <SettingsTile>[
-                    SettingsTile.navigation(
-                      leading: const Icon(Icons.format_paint),
-                      title: const Text('Theme'),
-                      value: Text(themeToString()),
-                      onPressed: (final BuildContext context) {
-                        showModalBottomSheet(
-                            context: context,
-                            builder: (final BuildContext context) => Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    ListTile(
-                                      title: const Text('System defined'),
-                                      selected: adaptiveThemeMode!.isSystem,
-                                      onTap: () =>
-                                          setNewTheme('system-defined'),
-                                    ),
-                                    ListTile(
-                                      title: const Text('Dark'),
-                                      selected: adaptiveThemeMode!.isDark,
-                                      onTap: () => setNewTheme('dark'),
-                                    ),
-                                    ListTile(
-                                      title: const Text('Light'),
-                                      selected: adaptiveThemeMode!.isLight,
-                                      onTap: () => setNewTheme('light'),
-                                    ),
-                                  ],
-                                ));
-                      },
-                    ),
-                  ],
-                ),
-                SettingsSection(title: const Text('Security'), tiles: [
-                  SettingsTile.switchTile(
-                    onToggle: (final bool value) async {
-                      final SharedPreferences sharedPreferences =
-                          await SharedPreferences.getInstance();
-                      sharedPreferences.setBool(
-                          SettingsPage.useFingerprintKey, value);
-                      setState(() {
-                        useFingerprint = value;
-                      });
-                    },
-                    initialValue: useFingerprint,
-                    leading: const Icon(Icons.fingerprint),
-                    title: const Text('Use biometrics'),
-                    description: const Text('Request biometrics to login'),
-                  ),
-                ])
-              ],
+        sections: [
+          SettingsSection(
+            title: const Text('Appearance'),
+            tiles: <SettingsTile>[
+              SettingsTile.navigation(
+                leading: const Icon(Icons.format_paint),
+                title: const Text('Theme'),
+                value: Text(themeToString()),
+                onPressed: (final BuildContext context) {
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (final BuildContext context) => Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          ListTile(
+                            title: const Text('System defined'),
+                            selected: adaptiveThemeMode!.isSystem,
+                            onTap: () =>
+                                setNewTheme('system-defined'),
+                          ),
+                          ListTile(
+                            title: const Text('Dark'),
+                            selected: adaptiveThemeMode!.isDark,
+                            onTap: () => setNewTheme('dark'),
+                          ),
+                          ListTile(
+                            title: const Text('Light'),
+                            selected: adaptiveThemeMode!.isLight,
+                            onTap: () => setNewTheme('light'),
+                          ),
+                        ],
+                      ));
+                },
+              ),
+            ],
+          ),
+          SettingsSection(title: const Text('Security'), tiles: [
+            SettingsTile.switchTile(
+              onToggle: (final bool value) async {
+                final SharedPreferences sharedPreferences =
+                await SharedPreferences.getInstance();
+                sharedPreferences.setBool(
+                    SettingsPage.useFingerprintKey, value);
+                setState(() {
+                  useFingerprint = value;
+                });
+              },
+              initialValue: useFingerprint,
+              leading: const Icon(Icons.fingerprint),
+              title: const Text('Use biometrics'),
+              description: const Text('Request biometrics to login'),
             ),
+          ])
+        ],
+      ),
     );
   }
 }
