@@ -20,12 +20,12 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<void> checkPermissions() async {
     final SharedPreferences sharedPreferences =
-        await SharedPreferences.getInstance();
+    await SharedPreferences.getInstance();
     final bool useFingerprint =
         sharedPreferences.getBool(SettingsPage.useFingerprintKey) ?? false;
     if (await localAuthentication.canCheckBiometrics && useFingerprint) {
       while (await localAuthentication.authenticate(
-              localizedReason: 'Please authenticate to continue') ==
+          localizedReason: 'Please authenticate to continue') ==
           false) {}
       if (mounted) {
         Navigator.popAndPushNamed(context, HomePage.path);

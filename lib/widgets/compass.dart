@@ -220,9 +220,9 @@ class _CompassViewPainter extends CustomPainter {
   @override
   bool shouldRepaint(_CompassViewPainter oldDelegate) =>
       oldDelegate.heading != heading ||
-      oldDelegate.foregroundColor != foregroundColor ||
-      oldDelegate.majorTickCount != majorTickCount ||
-      oldDelegate.minorTickCount != minorTickCount;
+          oldDelegate.foregroundColor != foregroundColor ||
+          oldDelegate.majorTickCount != majorTickCount ||
+          oldDelegate.minorTickCount != minorTickCount;
 
   List<double> _layoutScale(int ticks) {
     final scale = 360 / ticks;
