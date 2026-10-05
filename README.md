@@ -1,4 +1,4 @@
-# My Compas
+# My Compass
 
 Flutter app that measures the north and plots in a graph
 
@@ -16,6 +16,27 @@ And a dark mode
 
 ![Download github repo](https://github.com/danny270793/MyCompass/blob/master/playstore/images/004-main-dark.webp)
 
+## Features
+
+- Smooth, animated compass rose with heading in degrees and 16-point direction
+- Lock a bearing and see how far off course you are
+- Accuracy warning with calibration tips
+- Coordinates (decimal or DMS), altitude and accuracy, open in Maps or copy
+- Haptic tick on each principal direction, keep-screen-on option
+- English and Spanish, light / dark / system theme
+- Optional Face ID / fingerprint unlock
+
+## Development
+
+Flutter version is pinned in `.tool-versions` (same as Wallet):
+
+```bash
+asdf install
+flutter pub get
+flutter test
+flutter run
+```
+
 ## Downloads
 
 Found it on [Google Play](https://play.google.com/store/apps/details?id=io.github.danny270793.mycompass)
@@ -32,6 +53,6 @@ Licensed under the [MIT](license.md) License
 
 ## Version
 
-SoundMeter version 1.0.0
+My Compass version 1.1.0
 
-Last update 11/07/2023
+Last update 04/10/2026
