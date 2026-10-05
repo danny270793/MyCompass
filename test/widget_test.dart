@@ -1,30 +1,62 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mycompass/core/di/injection.dart';
+import 'package:mycompass/l10n/app_localizations.dart';
+import 'package:mycompass/pages/settings_page.dart';
+import 'package:mycompass/widgets/compass_dial.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:mycompass/main.dart';
+Widget _host(Widget child, {Locale locale = const Locale('en')}) => MaterialApp(
+  locale: locale,
+  localizationsDelegates: AppLocalizations.localizationsDelegates,
+  supportedLocales: AppLocalizations.supportedLocales,
+  home: child,
+);
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  setUpAll(() {
+    SharedPreferences.setMockInitialValues({});
+    setupDi();
+  });
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  testWidgets('compass dial paints', (tester) async {
+    await tester.pumpWidget(
+      _host(
+        const Scaffold(
+          body: CompassDial(
+            heading: 42,
+            targetBearing: 90,
+            cardinals: ['N', 'E', 'S', 'W'],
+          ),
+        ),
+      ),
+    );
+    expect(find.byType(CompassDial), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  testWidgets('settings shows compass, appearance and security', (
+    tester,
+  ) async {
+    await tester.pumpWidget(_host(const SettingsPage()));
+    await tester.pumpAndSettle();
+    expect(find.text('Coordinate format'), findsOneWidget);
+    expect(find.text('Haptic feedback'), findsOneWidget);
+    expect(find.text('Language'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('Face ID & fingerprint'),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(find.text('Face ID & fingerprint'), findsOneWidget);
+  });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  testWidgets('settings is translated to Spanish', (tester) async {
+    await tester.pumpWidget(
+      _host(const SettingsPage(), locale: const Locale('es')),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('Ajustes'), findsOneWidget);
+    expect(find.text('Formato de coordenadas'), findsOneWidget);
   });
 }
