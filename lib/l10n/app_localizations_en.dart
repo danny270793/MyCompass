@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -9,7 +10,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'My Compass';
+  String get appTitle => 'Compass';
 
   @override
   String get settings => 'Settings';
@@ -288,7 +289,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsPrivacyDataBody =>
-      'My Compass reads the magnetometer and, if you allow it, your GPS position while the app is open. Everything is processed on your device and is not recorded, uploaded or shared.';
+      'Compass reads the magnetometer and, if you allow it, your GPS position while the app is open. Everything is processed on your device and is not recorded, uploaded or shared.';
 
   @override
   String get settingsPrivacyInfraTitle => 'What we store';
@@ -319,7 +320,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsTermsAcceptanceBody =>
-      'By accessing or using My Compass, you agree to these terms. If you do not agree, do not use the app.';
+      'By accessing or using Compass, you agree to these terms. If you do not agree, do not use the app.';
 
   @override
   String get settingsTermsDisclaimerTitle => 'Not a navigation instrument';

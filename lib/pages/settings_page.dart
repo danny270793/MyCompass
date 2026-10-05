@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:mycompass/l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 import '../core/di/injection.dart';
 import '../core/locale/app_locale_controller.dart';
 import '../core/security/app_biometric_unlock_controller.dart';
@@ -13,7 +14,7 @@ import '../core/compass/app_compass_settings_controller.dart';
 import '../widgets/bottom_sheet_pinned_title.dart';
 
 const _playStoreUrl =
-    'https://play.google.com/store/apps/details?id=io.github.danny270793.mycompass';
+    'https://play.google.com/store/apps/details?id=io.github.danny270793.compass';
 
 String _languageOptionLabel(AppLocalizations l10n, AppLanguagePreference p) =>
     switch (p) {
@@ -94,10 +95,13 @@ Future<void> _setBiometricUnlockEnabled(
     }
     return;
   }
-  final ok = await ctrl.localAuth.authenticate(
-    localizedReason: l10n.settingsBiometricAuthReason,
-    options: const AuthenticationOptions(biometricOnly: true, stickyAuth: true),
-  );
+  final ok = await ctrl.localAuth
+      .authenticate(
+        localizedReason: l10n.settingsBiometricAuthReason,
+        biometricOnly: true,
+        persistAcrossBackgrounding: true,
+      )
+      .catchError((Object _) => false, test: (e) => e is LocalAuthException);
   if (!context.mounted) {
     return;
   }

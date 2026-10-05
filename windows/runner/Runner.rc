@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "io.github.danny270793" "\0"
-            VALUE "FileDescription", "mycompass" "\0"
+            VALUE "FileDescription", "Compass" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "mycompass" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2025 io.github.danny270793. All rights reserved." "\0"
             VALUE "OriginalFilename", "mycompass.exe" "\0"
-            VALUE "ProductName", "mycompass" "\0"
+            VALUE "ProductName", "Compass" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

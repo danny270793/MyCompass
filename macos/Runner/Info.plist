@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationUsageDescription</key>
-	<string>My Compass uses your location to show your coordinates and altitude.</string>
+	<string>Compass uses your location to show your coordinates and altitude.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

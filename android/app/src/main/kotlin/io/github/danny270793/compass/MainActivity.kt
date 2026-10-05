@@ -1,4 +1,4 @@
-package io.github.danny270793.mycompass
+package io.github.danny270793.compass
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

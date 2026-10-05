@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>NSLocationWhenInUseUsageDescription</key>
-    <string>My Compass uses your location to show your coordinates and altitude, and to improve heading accuracy.</string>
+    <string>Compass uses your location to show your coordinates and altitude, and to improve heading accuracy.</string>
     <key>NSFaceIDUsageDescription</key>
     <string>Unlock the app with Face ID when you enable this option.</string>
     <key>CFBundleLocalizations</key>
@@ -19,7 +19,7 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>$(DEVELOPMENT_LANGUAGE)</string>
     <key>CFBundleDisplayName</key>
-    <string>My Compass</string>
+    <string>Compass</string>
     <key>CFBundleExecutable</key>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
@@ -27,7 +27,7 @@
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>
-    <string>My Compass</string>
+    <string>Compass</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>

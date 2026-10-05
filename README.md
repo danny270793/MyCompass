@@ -1,4 +1,4 @@
-# My Compass
+# Compass
 
 Flutter app that measures the north and plots in a graph
 
@@ -39,7 +39,7 @@ flutter run
 
 ## Downloads
 
-Found it on [Google Play](https://play.google.com/store/apps/details?id=io.github.danny270793.mycompass)
+Found it on [Google Play](https://play.google.com/store/apps/details?id=io.github.danny270793.compass)
 
 ## Follow me
 
@@ -53,6 +53,6 @@ Licensed under the [MIT](license.md) License
 
 ## Version
 
-My Compass version 1.1.0
+Compass version 1.1.0
 
 Last update 04/10/2026

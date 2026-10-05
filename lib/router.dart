@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
+
 import 'pages/home_page.dart';
 import 'pages/legal_info_page.dart';
 import 'pages/settings_page.dart';
