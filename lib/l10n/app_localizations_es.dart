@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -9,7 +10,7 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'Mi Brújula';
+  String get appTitle => 'Compass';
 
   @override
   String get settings => 'Ajustes';
@@ -289,7 +290,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get settingsPrivacyDataBody =>
-      'Mi Brújula lee el magnetómetro y, si lo permites, tu posición GPS mientras la app está abierta. Todo se procesa en tu dispositivo y no se registra, sube ni comparte.';
+      'Compass lee el magnetómetro y, si lo permites, tu posición GPS mientras la app está abierta. Todo se procesa en tu dispositivo y no se registra, sube ni comparte.';
 
   @override
   String get settingsPrivacyInfraTitle => 'Qué guardamos';
@@ -320,7 +321,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get settingsTermsAcceptanceBody =>
-      'Al acceder o usar Mi Brújula, aceptas estos términos. Si no estás de acuerdo, no uses la app.';
+      'Al acceder o usar Compass, aceptas estos términos. Si no estás de acuerdo, no uses la app.';
 
   @override
   String get settingsTermsDisclaimerTitle =>

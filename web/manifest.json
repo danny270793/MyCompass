@@ -1,6 +1,6 @@
 {
-    "name": "My Compass",
-    "short_name": "My Compass",
+    "name": "Compass",
+    "short_name": "Compass",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#2196F3",

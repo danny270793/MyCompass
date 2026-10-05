@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
-  /// **'My Compass'**
+  /// **'Compass'**
   String get appTitle;
 
   /// No description provided for @settings.
@@ -623,7 +623,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsPrivacyDataBody.
   ///
   /// In en, this message translates to:
-  /// **'My Compass reads the magnetometer and, if you allow it, your GPS position while the app is open. Everything is processed on your device and is not recorded, uploaded or shared.'**
+  /// **'Compass reads the magnetometer and, if you allow it, your GPS position while the app is open. Everything is processed on your device and is not recorded, uploaded or shared.'**
   String get settingsPrivacyDataBody;
 
   /// No description provided for @settingsPrivacyInfraTitle.
@@ -677,7 +677,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsTermsAcceptanceBody.
   ///
   /// In en, this message translates to:
-  /// **'By accessing or using My Compass, you agree to these terms. If you do not agree, do not use the app.'**
+  /// **'By accessing or using Compass, you agree to these terms. If you do not agree, do not use the app.'**
   String get settingsTermsAcceptanceBody;
 
   /// No description provided for @settingsTermsDisclaimerTitle.
