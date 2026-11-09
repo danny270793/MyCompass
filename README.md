@@ -56,3 +56,7 @@ Licensed under the [MIT](license.md) License
 Compass version 1.1.0
 
 Last update 04/10/2026
+
+## Deploy
+
+`./scripts/deploy.sh` builds a release APK and publishes it to Firebase App Distribution. Before the first run, copy `scripts/.env.deploy.example` to `scripts/.env.deploy` (gitignored), set `FIREBASE_GROUPS` to the tester group alias, and run `firebase login`. `--bump` raises the build number and `--dry-run` prints the commands without running them.
