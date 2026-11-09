@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:mycompass/l10n/app_localizations.dart';
@@ -13,6 +15,12 @@ import 'router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Only Android has a Firebase config (android/app/google-services.json);
+  // add ios/Runner/GoogleService-Info.plist before enabling it on iOS.
+  if (defaultTargetPlatform == TargetPlatform.android) {
+    await Firebase.initializeApp();
+  }
 
   setupDi();
   await getIt<AppLocaleController>().load();
